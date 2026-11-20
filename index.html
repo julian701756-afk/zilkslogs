@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZilksLogs | Social Marketplace</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f8ff;color:#172554}
+header{background:#fff;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px #ddd}
+.logo{font-size:25px;font-weight:bold;color:#1769e0}
+button{background:#1769e0;color:white;border:0;padding:12px 18px;border-radius:8px;font-weight:bold}
+.hero{text-align:center;padding:65px 20px;background:#e5efff}
+.hero h1{font-size:36px;margin-bottom:12px}
+.hero p{color:#52627d}
+.search{padding:14px;width:85%;max-width:450px;border:1px solid #ccc;border-radius:8px;margin:15px 0}
+section{padding:35px 6%}
+.categories{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.category,.product{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 10px #e1e8f5}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.product h3{font-size:16px}
+.price{color:#1769e0;font-weight:bold}
+footer{text-align:center;background:#102b57;color:white;padding:25px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">ZilksLogs</div>
+<button onclick="location.href='mailto:zilkslogs@gmail.com'">Contact us</button>
+</header>
+
+<div class="hero">
+<h1>Welcome to ZilksLogs</h1>
+<p>Your Social Media Marketplace</p>
+<input class="search" id="search" placeholder="Search social media accounts..." oninput="filterProducts()">
+<br>
+<button onclick="document.getElementById('listings').scrollIntoView()">Explore Listings</button>
+</div>
+
+<section>
+<h2>Browse Categories</h2>
+<div class="categories">
+<div class="category">📸 Instagram</div>
+<div class="category">📘 Facebook</div>
+<div class="category">🎵 TikTok</div>
+<div class="category">▶️ YouTube</div>
+</div>
+</section>
+
+<section id="listings">
+<h2>Available Listings</h2>
+<div class="products" id="products">
+<div class="product"><h3>Instagram Account</h3><p>Social media listing</p><p class="price">₦ Price on request</p><button onclick="contact()">Enquire</button></div>
+<div class="product"><h3>Facebook Account</h3><p>Social media listing</p><p class="price">$ Price on request</p><button onclick="contact()">Enquire</button></div>
+<div class="product"><h3>TikTok Account</h3><p>Social media listing</p><p class="price">₦ Price on request</p><button onclick="contact()">Enquire</button></div>
+<div class="product"><h3>YouTube Channel</h3><p>Social media listing</p><p class="price">$ Price on request</p><button onclick="contact()">Enquire</button></div>
+</div>
+</section>
+
+<section style="text-align:center">
+<h2>Want to sell?</h2>
+<p>Contact us to discuss listing your products.</p>
+<button onclick="contact()">Become a Seller</button>
+</section>
+
+<footer>
+<h3>ZilksLogs</h3>
+<p>Your marketplace. Your opportunities.</p>
+<p>© 2026 ZilksLogs</p>
+</footer>
+
+<script>
+function contact(){
+window.location.href="mailto:zilkslogs@gmail.com?subject=ZilksLogs%20Enquiry";
+}
+function filterProducts(){
+let q=document.getElementById("search").value.toLowerCase();
+document.querySelectorAll(".product").forEach(p=>{
+p.style.display=p.innerText.toLowerCase().includes(q)?"block":"none";
+});
+}
+</script>
+</body>
+</html>
